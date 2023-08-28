@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZumbaMobileApp.MainPage">
+
+    <Grid
+        RowDefinitions="Auto, *, Auto"
+        ColumnDefinitions="15*, 70*, 15*"
+        Margin="30, 40, 30, 37"
+        RowSpacing="40">
+
+        <Button
+            x:Name="BackBtn"
+            Text="&lt;"
+            FontSize="28"
+            FontAttributes="Bold"
+            BackgroundColor="Transparent"
+            TextColor="Black"
+            SemanticProperties.Hint="Returns to the previous page"/>
+        <Label
+            Grid.Column="1"
+            Text="CONCESSIONS"
+            SemanticProperties.HeadingLevel="Level1"
+            FontSize="28"
+            HorizontalOptions="Center"
+            VerticalTextAlignment="Center"/>
+
+        <CollectionView
+            Grid.Row="1"
+            Grid.Column="1">
+            <CollectionView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Concession 1</x:String>
+                    <x:String>Concession 2</x:String>
+                    <x:String>Concession 3</x:String>
+                </x:Array>
+            </CollectionView.ItemsSource>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="0,0,0,40">
+                        <Grid
+                            RowDefinitions="50*, 50*"
+                            ColumnDefinitions="30*, 30*, 30*">
+                            <Label Text="{Binding .}"
+                                Grid.ColumnSpan="3"
+                                HorizontalTextAlignment="Center"/>
+                            <Label Text="Left: 0"
+                                Grid.Row="1"
+                                VerticalTextAlignment="Center"/>
+                            <Label Text="PAID"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                VerticalTextAlignment="Center"/>
+                            <Button
+                                Grid.Row="1"
+                                Grid.Column="2"
+                                Padding="0"
+                                x:Name="ViewBtn"
+                                Text="View"
+                                SemanticProperties.Hint="View this concession"/>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+
+        <Button
+            Grid.Row="2"
+            Grid.Column="1"
+            x:Name="PurchaseBtn"
+            Text="PURCHASE MORE"
+            SemanticProperties.Hint="Requests more concessions"
+            Padding="30,0"
+            HorizontalOptions="Center" />
+
+    </Grid>
+
+</ContentPage>
