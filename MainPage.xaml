@@ -38,7 +38,13 @@
             </CollectionView.ItemsSource>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame Margin="0,0,0,30">
+                    <Border Margin="0,0,0,70"
+                        Padding="20">
+                        <Border.Shadow>
+                            <Shadow Radius="7"
+                            Offset="0, 10"
+                            Opacity="0.25"/>
+                        </Border.Shadow>
                         <Grid
                             RowDefinitions="50*, 50*"
                             ColumnDefinitions="30*, 30*, 30*">
@@ -62,7 +68,7 @@
                                 Text="View"
                                 SemanticProperties.Hint="View this concession"/>
                         </Grid>
-                    </Frame>
+                    </Border>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
