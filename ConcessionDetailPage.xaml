@@ -9,15 +9,14 @@
     </ContentPage.Behaviors>
 
     <StackLayout
-        Margin="30, 30, 30, 100">
+        Margin="30, 20, 30, 100">
 
         <ImageButton Source="back_icon.svg"
             HorizontalOptions="Start"/>
 
         <Border HorizontalOptions="Fill"
             VerticalOptions="CenterAndExpand"
-            Padding="40, 20, 40, 30"
-            StrokeThickness="4">
+            Padding="40, 20, 40, 30">
             <Border.Shadow>
                 <Shadow Radius="7"
                     Offset="0, 10"
@@ -45,7 +44,8 @@
                     Grid.Row="2"
                     Grid.ColumnSpan="2"
                     Padding="30"
-                    Margin="0,0,0,10">
+                    Margin="0,0,0,10"
+                    StrokeThickness="2">
                     <Border.Shadow>
                         <Shadow Radius="7"
                             Offset="0, 10"
@@ -55,6 +55,7 @@
                             Spacing="10">
                         <Label Text="1 - Monday"
                             FontAttributes="Bold"
+                            FontSize="16"
                             HorizontalTextAlignment="Center"/>
                         <Label Text="Class: Zumba Dance"
                             HorizontalTextAlignment="Center"/>

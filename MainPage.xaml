@@ -7,12 +7,13 @@
     <ContentPage.Behaviors>
         <toolkit:StatusBarBehavior StatusBarColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" StatusBarStyle="{AppThemeBinding Light=DarkContent, Dark=LightContent}" />
     </ContentPage.Behaviors>
-    
+
     <Grid
-        RowDefinitions="Auto, *, Auto"
+        RowDefinitions="7*, 86*, 7*" 
         ColumnDefinitions="15*, 70*, 15*"
         Margin="30, 20, 30, 37"
-        RowSpacing="30">
+        RowSpacing="20"
+        ColumnSpacing="0">
 
         <ImageButton Source="back_icon.svg"
             HorizontalOptions="Start"/>
@@ -21,14 +22,15 @@
             Grid.Column="1"
             Text="CONCESSIONS"
             SemanticProperties.HeadingLevel="Level1"
-            FontSize="28"
+            FontSize="24"
             FontAttributes="Bold"
             HorizontalOptions="Center"
             VerticalTextAlignment="Center"/>
 
         <CollectionView
             Grid.Row="1"
-            Grid.Column="1">
+            Grid.ColumnSpan="3"
+            Margin="30,0">
             <CollectionView.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
                     <x:String>Concession 1</x:String>
@@ -38,8 +40,8 @@
             </CollectionView.ItemsSource>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Border Margin="0,0,0,70"
-                        Padding="20">
+                    <Border Margin="0,0,0,50"
+                        Padding="25">
                         <Border.Shadow>
                             <Shadow Radius="7"
                             Offset="0, 10"
@@ -47,10 +49,12 @@
                         </Border.Shadow>
                         <Grid
                             RowDefinitions="50*, 50*"
-                            ColumnDefinitions="30*, 30*, 30*">
+                            ColumnDefinitions="30*, 30*, 30*"
+                            RowSpacing="10">
                             <Label Text="{Binding .}"
                                 Grid.ColumnSpan="3"
                                 FontAttributes="Bold"
+                                   FontSize="16"
                                 HorizontalTextAlignment="Center"/>
                             <Label Text="Left: 0"
                                 Grid.Row="1"
@@ -64,9 +68,12 @@
                                 Grid.Row="1"
                                 Grid.Column="2"
                                 Padding="0"
+                                MaximumHeightRequest="30"
                                 x:Name="ViewBtn"
                                 Text="View"
-                                SemanticProperties.Hint="View this concession"/>
+                                SemanticProperties.Hint="View this concession"
+                                BorderWidth="1"
+                                CornerRadius="100"/>
                         </Grid>
                     </Border>
                 </DataTemplate>
@@ -76,12 +83,14 @@
 
         <Button
             Grid.Row="2"
-            Grid.Column="1"
+            Grid.ColumnSpan="3"
+            Margin="0,0"
             x:Name="PurchaseBtn"
             Text="PURCHASE MORE"
+            FontSize="17"
             FontAttributes="Bold"
             SemanticProperties.Hint="Requests more concessions"
-            Padding="30,0"
+            Padding="50,10"
             HorizontalOptions="Center" />
 
     </Grid>
