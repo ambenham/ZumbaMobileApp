@@ -7,17 +7,13 @@
     Shell.FlyoutBehavior="Disabled">
 
     <ShellContent
-        ContentTemplate="{DataTemplate local:ConcessionDetailPage}"
-        Route="ConcessionDetailPage" />
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
 
-    <Shell.TitleView>
-        <HorizontalStackLayout
-                HorizontalOptions="End">
-            <ImageButton Source="settings_icon.svg"
-                Padding="0,0,5,0"/>
-            <ImageButton Source="menu_icon.svg"
-                         Padding="0,0,5,0"/>
-        </HorizontalStackLayout>
-    </Shell.TitleView>
+    <Shell.ToolbarItems>
+        <ToolbarItem IconImageSource="settings_icon.svg"/>
+        <ToolbarItem Order="Secondary" Priority="0" Text="My Classes"/>
+        <ToolbarItem Order="Secondary" Priority="3" Text="Log Out"/>
+    </Shell.ToolbarItems>
 
 </Shell>

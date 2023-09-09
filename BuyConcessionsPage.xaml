@@ -1,18 +1,17 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ZumbaMobileApp.MainPage"
+             x:Class="ZumbaMobileApp.BuyConcessionsPage"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
 
     <ContentPage.Behaviors>
-        <toolkit:StatusBarBehavior StatusBarColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" 
-                                   StatusBarStyle="{AppThemeBinding Light=DarkContent, Dark=LightContent}" />
+        <toolkit:StatusBarBehavior StatusBarColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" StatusBarStyle="{AppThemeBinding Light=DarkContent, Dark=LightContent}" />
     </ContentPage.Behaviors>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Order="Secondary" Priority="1" Text="My Concessions"/> <!--no navigation (current page)-->
-        <ToolbarItem Order="Secondary" Priority="2" Text="Buy Concessions"
-                     Command="{Binding NavigateCommand}"/> <!--navigates to Buy Concessions Page)-->
+        <ToolbarItem Order="Secondary" Priority="1" Text="My Concessions"
+                     Command="{Binding NavigateCommand}"/>
+        <ToolbarItem Order="Secondary" Priority="2" Text="Buy Concessions"/>
     </ContentPage.ToolbarItems>
 
     <StackLayout
@@ -24,7 +23,7 @@
 
             <Label
                 Grid.Column="1"
-                Text="Your Concessions"
+                Text="Buy Concessions"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="24"
                 FontAttributes="Bold"
@@ -32,18 +31,26 @@
                 VerticalTextAlignment="Center"/>
         </Grid>
 
+        <Label
+            Text="for Name"
+            FontSize="20"
+            FontAttributes="Bold"
+            HorizontalOptions="Center"
+            VerticalTextAlignment="Center"/>
+        
         <CollectionView
             Margin="30,30">
             <CollectionView.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
-                    <x:String>Concession 1</x:String>
-                    <x:String>Concession 2</x:String>
-                    <x:String>Concession 3</x:String>
+                    <x:String>Single Concession</x:String>
+                    <x:String>Basic Concessions</x:String>
+                    <x:String>Premium Concessions</x:String>
+                    <x:String>Deluxe Concessions</x:String>
                 </x:Array>
             </CollectionView.ItemsSource>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Border Margin="0,0,0,50"
+                    <Border Margin="0,0,0,30"
                         Padding="25">
                         <Border.Shadow>
                             <Shadow Radius="7"
@@ -52,29 +59,22 @@
                         </Border.Shadow>
                         <Grid
                             RowDefinitions="50*, 50*"
-                            ColumnDefinitions="30*, 30*, 30*"
+                            ColumnDefinitions="70*, 30*"
                             RowSpacing="10">
                             <Label Text="{Binding .}"
                                 Grid.ColumnSpan="3"
                                 FontAttributes="Bold"
-                                FontSize="16"
-                                HorizontalTextAlignment="Center"/>
-                            <Label Text="Left: 0"
-                                Grid.Row="1"
-                                VerticalTextAlignment="Center"/>
-                            <Label Text="PAID"
-                                Grid.Row="1"
-                                Grid.Column="1"
-                                FontAttributes="Bold"
-                                VerticalTextAlignment="Center"/>
+                                FontSize="16"/>
+                            <Label Text="x1 class"
+                                Grid.Row="1"/>
                             <Button
-                                Grid.Row="1"
-                                Grid.Column="2"
+                                Grid.Row="2"
+                                Grid.Column="1"
                                 Padding="0"
                                 MaximumHeightRequest="30"
-                                x:Name="ViewBtn"
-                                Text="View"
-                                SemanticProperties.Hint="View this concession"
+                                x:Name="BuyBtn"
+                                Text="Buy"
+                                SemanticProperties.Hint="Buy this concession pack"
                                 BorderWidth="1"
                                 CornerRadius="100"/>
                         </Grid>
