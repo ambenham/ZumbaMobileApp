@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ZumbaMobileApp.Models
 {
-    class User
+    public class User
     {
         public int UserID { get; set; }
         public string FirstName { get; set; }
@@ -16,13 +16,12 @@ namespace ZumbaMobileApp.Models
         public string Residence { get; set; }
         public string PhoneNumber { get; set; }
         public int Age { get; set; }
-        public int PaymentMethodID { get; set; }
-        public int ConcessionID { get; set; }
+        public string Gender { get; set; }
         public DateTime DateJoined { get; set; }
         public DateTime? DateLeft { get; set; }
 
         
-        public User(int userID, string firstName, string lastName, string email, string passkey, string residence, string phoneNumber, int age, int paymentMethodID, int concessionID, DateTime dateJoined)
+        public User(int userID, string firstName, string lastName, string email, string passkey, string residence, string phoneNumber, int age, string gender, DateTime dateJoined)
         {
             this.UserID = userID;
             this.FirstName = firstName;
@@ -32,8 +31,7 @@ namespace ZumbaMobileApp.Models
             this.Residence = residence;
             this.PhoneNumber = phoneNumber;
             this.Age = age;
-            this.PaymentMethodID = paymentMethodID;
-            this.ConcessionID = concessionID;
+            this.Gender = gender;
             this.DateJoined = dateJoined;
             this.DateLeft = null;
         }
