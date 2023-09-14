@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ZumbaMobileApp.Models
 {
-    class Concession
+    public class Concession
     {
         public int ConcessionID { get; set; }
         public int ConcessionType { get; set; }
@@ -14,13 +14,13 @@ namespace ZumbaMobileApp.Models
         public DateTime DatePaid { get; set; }
         public string Status { get; set; }
         
-        public Concession(int concessionID, int concessionType, int userID, DateTime datePaid, string status)
-        {
-            this.ConcessionID = concessionID;
-            this.ConcessionType = concessionType;
-            this.UserID = userID;
-            this.DatePaid = datePaid;
-            this.Status = status;
-        }
+        //public Concession(int concessionID, int concessionType, int userID, DateTime datePaid, string status)
+        //{
+        //    this.ConcessionID = concessionID;
+        //    this.ConcessionType = concessionType;
+        //    this.UserID = userID;
+        //    this.DatePaid = datePaid;
+        //    this.Status = status;
+        //}
     }
 }
