@@ -19,8 +19,8 @@ public partial class MainViewModel : ObservableObject
     {
         UserConcessions = new ObservableCollection<Concession>
         {
-            new Concession { ConcessionID = 1, ConcessionType = 3, UserID = 1, DatePaid = new DateTime(2023, 8, 29), Status ="REQUESTED"},
-            new Concession { ConcessionID = 2, ConcessionType = 7, UserID = 1, DatePaid = new DateTime(2023, 8, 23), Status ="PAID"}
+            new Concession(1, 3, 1, new DateTime(2023, 8, 29), "REQUESTED"),
+            new Concession(2, 7, 1, new DateTime(2023, 8, 23), "PAID")
         };
         if (currentUser.FirstName == null)
         {
