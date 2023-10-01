@@ -19,8 +19,8 @@ public partial class MainViewModel : ObservableObject
     {
         UserConcessions = new ObservableCollection<Concession>
         {
-            new Concession(1, 3, 1, new DateTime(2023, 8, 29), "REQUESTED"),
-            new Concession(2, 7, 1, new DateTime(2023, 8, 23), "PAID")
+            new Concession(1, 3, 3, 1, new DateTime(2023, 8, 29), "REQUESTED"),
+            new Concession(2, 7, 5, 1, new DateTime(2023, 8, 23), "PAID")
         };
         if (currentUser.FirstName == null)
         {
@@ -38,4 +38,13 @@ public partial class MainViewModel : ObservableObject
     {
         await Shell.Current.GoToAsync(nameof(BuyConcessionsPage));
     }
+
+    // Navigate Back Command
+    [RelayCommand]
+    async Task GoBack()
+    {
+        //await Shell.Current.GoToAsync(".."); // navigate back
+        await Shell.Current.GoToAsync(nameof(BuyConcessionsPage)); // only while this is the main page
+    }
+
 }

@@ -24,8 +24,8 @@ namespace ZumbaMobileApp
             builder.Services.AddSingleton<MainPage>(); // AddSingleton creates one MainPage and calls that every time
             builder.Services.AddSingleton<MainViewModel>();
             
-            builder.Services.AddTransient<BuyConcessionsPage>(); // AddTransient creates a new BuyConcessionsPage every time & destroys it
-            builder.Services.AddTransient<BuyConcessionsViewModel>();
+            builder.Services.AddSingleton<BuyConcessionsPage>(); // AddTransient creates a new BuyConcessionsPage every time & destroys it
+            builder.Services.AddSingleton<BuyConcessionsViewModel>();
 
 #if DEBUG
 		builder.Logging.AddDebug();

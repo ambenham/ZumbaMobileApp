@@ -19,7 +19,8 @@
 
         <Grid ColumnDefinitions="15*, 70*, 15*">
             <ImageButton Source="back_icon.svg"
-                HorizontalOptions="Start"/>
+                HorizontalOptions="Start"
+                Command="{Binding GoBackCommand}"/>
 
             <Label
                 Grid.Column="1"

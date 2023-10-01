@@ -9,5 +9,6 @@ namespace ZumbaMobileApp
             InitializeComponent();
             BindingContext = vm;
         }
+
     }
 }

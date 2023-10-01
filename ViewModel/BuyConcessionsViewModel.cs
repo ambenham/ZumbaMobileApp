@@ -37,4 +37,11 @@ public partial class BuyConcessionsViewModel : ObservableObject
     {
         await Shell.Current.GoToAsync("///MainPage");
     }
+
+    // Navigate Back Command
+    [RelayCommand]
+    async Task GoBack()
+    {
+        await Shell.Current.GoToAsync("..");
+    }
 }
