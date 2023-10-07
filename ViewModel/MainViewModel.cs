@@ -8,19 +8,20 @@ namespace ZumbaMobileApp.ViewModel;
 public partial class MainViewModel : ObservableObject
 {
     [ObservableProperty]
-    ObservableCollection<Concession> userConcessions;
+    public ObservableCollection<Concession> userConcessions;
 
     [ObservableProperty]
     string heading;
 
-    User currentUser = new User(1, "John", "Doe", "john@example.com", "password1", "123 Main St", "1234567890", 30, "Male", new DateTime(2023, 8, 20));
-    
+    User currentUser;
+    int count = 2;
     public MainViewModel() 
     {
+        currentUser = new User(1, "John", "Doe", "john@example.com", "password1", "123 Main St", "1234567890", 30, "Male", new DateTime(2023, 8, 20));
         UserConcessions = new ObservableCollection<Concession>
         {
-            new Concession(1, 3, 3, 1, new DateTime(2023, 8, 29), "REQUESTED"),
-            new Concession(2, 7, 5, 1, new DateTime(2023, 8, 23), "PAID")
+            new Concession(1, "Basic Concession", 3, 3, currentUser.UserID, new DateTime(2023, 8, 29), "REQUESTED"),
+            new Concession(2, "Premium Concession", 7, 5, currentUser.UserID, new DateTime(2023, 8, 23), "PAID")
         };
         if (currentUser.FirstName == null)
         {

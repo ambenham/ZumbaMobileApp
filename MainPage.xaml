@@ -53,12 +53,12 @@
                             RowDefinitions="50*, 50*"
                             ColumnDefinitions="25*, 30*, 35*"
                             RowSpacing="10">
-                            <Label Text="{Binding ConcessionType, StringFormat='{0}-Class Pass'}"
+                            <Label Text="{Binding ConcessionType}"
                                 Grid.ColumnSpan="3"
                                 FontAttributes="Bold"
                                 FontSize="16"
                                 HorizontalTextAlignment="Center"/>
-                            <Label Text="{Binding ConcessionType, StringFormat='Total: {0}'}"
+                            <Label Text="{Binding TotalNum, StringFormat='Total: {0}'}"
                                 Grid.Row="1"
                                 VerticalTextAlignment="Center"/>
                             <Label Text="{Binding NumLeft, StringFormat='Left: {0}'}"

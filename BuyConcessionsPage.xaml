@@ -2,7 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ZumbaMobileApp.BuyConcessionsPage"
-             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:viewmodel="clr-namespace:ZumbaMobileApp.ViewModel"
+             xmlns:model="clr-namespace:ZumbaMobileApp.Models"
+             x:DataType="viewmodel:BuyConcessionsViewModel">
 
     <ContentPage.Behaviors>
         <toolkit:StatusBarBehavior StatusBarColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" StatusBarStyle="{AppThemeBinding Light=DarkContent, Dark=LightContent}" />
@@ -41,9 +44,9 @@
         
         <CollectionView
             Margin="30,30"
-            ItemsSource="{Binding Concessions}">
+            ItemsSource="{Binding BasicConcessions}">
             <CollectionView.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="{x:Type model:Concession}">
                     <Border Margin="0,0,0,30"
                         Padding="25"
                         BindableLayout.ItemsSource="{Binding .}">
@@ -56,11 +59,11 @@
                             RowDefinitions="50*, 50*"
                             ColumnDefinitions="70*, 30*"
                             RowSpacing="10">
-                            <Label Text="{Binding Value}"
+                            <Label Text="{Binding ConcessionType}"
                                 Grid.ColumnSpan="3"
                                 FontAttributes="Bold"
                                 FontSize="16"/>
-                            <Label Text="{Binding Key, StringFormat='x{0} classes'}"
+                            <Label Text="{Binding TotalNum, StringFormat='x{0} classes'}"
                                 Grid.Row="1"/>
                             <Button
                                 Grid.Row="2"
@@ -68,7 +71,7 @@
                                 Padding="0"
                                 MaximumHeightRequest="30"
                                 x:Name="BuyBtn"
-                                Text="Buy"
+                                Text="{Binding Status}"
                                 SemanticProperties.Hint="Buy this concession pack"
                                 BorderWidth="1"
                                 CornerRadius="100"/>
